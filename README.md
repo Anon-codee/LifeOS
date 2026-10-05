@@ -1,22 +1,79 @@
-# LifeOS — Hackathon Prototype
+# LIFEOS
 
-A frontend-only, hackathon demo of the LifeOS autonomous personal operations agent.
+### Don't manage your tasks. Give AI the goal.
 
-## Demo flow
+LifeOS is an **autonomous personal operations agent** that turns high-level goals into coordinated, adaptive plans.
 
-1. Open `index.html` in a browser.
-2. The dashboard shows an active goal: **Attend Hackathon in Mumbai**.
-3. Click **Review** / **View Options** under the travel conflict.
-4. Choose an alternative train.
-5. LifeOS displays **Plan changed. Replanning...** and then updates the dashboard.
-6. You can also edit the goal at the top and click the arrow to replay the agent workflow.
+Instead of asking users to manually manage tasks, calendars, deadlines, travel and dependencies, LifeOS understands the goal, gathers relevant context, creates a plan, monitors it, detects conflicts and replans when reality changes.
 
-## What is simulated
+---
 
-The prototype simulates email, calendar, document and travel sources. No real accounts or bookings are accessed. This keeps the demo safe and reliable while demonstrating the agent loop: **understand → gather → plan → execute → monitor → replan → human approval**.
+## 🚀 The Idea
 
-## Files
+Modern productivity tools are good at managing individual tasks.
 
-- `index.html` — dashboard and modal UI
-- `styles.css` — responsive visual design
-- `app.js` — interactive agent workflow
+The problem is that real-life goals are rarely individual tasks.
+
+A goal such as:
+
+> **"I'm attending a hackathon in Mumbai this weekend. Make sure I'm ready."**
+
+can involve:
+
+- Event registration
+- Project deadlines
+- Team meetings
+- Travel
+- Accommodation
+- Documents
+- Preparation
+- Dependencies
+- Unexpected changes
+
+Today, the user has to coordinate all of these manually.
+
+**LifeOS shifts that responsibility from the user to an AI agent.**
+
+---
+
+# 🧠 How LifeOS Works
+
+```text
+                    USER GOAL
+                        │
+                        ▼
+              ┌──────────────────┐
+              │ Information Agent│
+              │                  │
+              │ Gather Context   │
+              └────────┬─────────┘
+                       │
+                       ▼
+              ┌──────────────────┐
+              │ Planning Agent   │
+              │                  │
+              │ Tasks            │
+              │ Dependencies     │
+              │ Conflicts        │
+              └────────┬─────────┘
+                       │
+                       ▼
+              ┌──────────────────┐
+              │ Monitoring Agent │
+              │                  │
+              │ Validate Plan    │
+              │ Detect Changes   │
+              └────────┬─────────┘
+                       │
+                 Conflict?
+                 /       \
+               NO         YES
+               │           │
+               ▼           ▼
+           EXECUTE      HUMAN APPROVAL
+                            │
+                            ▼
+                         REPLAN
+                            │
+                            ▼
+                     UPDATED PLAN

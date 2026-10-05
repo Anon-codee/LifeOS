@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: lifeos-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: lifeos
+      POSTGRES_PASSWORD: lifeos_dev
+      POSTGRES_DB: lifeos
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - lifeos_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  lifeos_postgres_data:
